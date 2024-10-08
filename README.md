@@ -10,18 +10,16 @@ Sometimes there is a high demand for products that are unavailable in the IKEA o
 
 Please report any bugs related to this alpha in the issues: https://github.com/Ephigenia/ikea-availability-checker/issues
 
-Features
-================================================================================
+# Features
 
-- supports listings from >400 IKEA stores worldwide
-- get product stock amount for a whole country or single store in JSON, Text and CLI-Table format
-- support for many countries:
-    - at, au, be, ca, ch, cn, cz, de, dk, es, fi, fr, gb, hk, hu, hr, ie, it, jo, jp, kr, kw, lt, lv, my, nl, no, pl, pt, qa, ro, sa, se, sg, sk, th, tw, us - [![smokey](https://github.com/Ephigenia/ikea-availability-checker/actions/workflows/smokey.yml/badge.svg?branch=alpha)](https://github.com/Ephigenia/ikea-availability-checker/actions/workflows/smokey.yml)
-    - Russia (ru) is closed down
-- [javascript API](#api) for easy integration in your library or project
+-   supports listings from >400 IKEA stores worldwide
+-   get product stock amount for a whole country or single store in JSON, Text and CLI-Table format
+-   support for many countries:
+    -   at, au, be, ca, ch, cn, cz, de, dk, es, fi, fr, gb, hk, hu, hr, ie, it, jo, jp, kr, kw, lt, lv, my, nl, no, pl, pt, qa, ro, sa, se, sg, sk, th, tw, us - [![smokey](https://github.com/Ephigenia/ikea-availability-checker/actions/workflows/smokey.yml/badge.svg?branch=alpha)](https://github.com/Ephigenia/ikea-availability-checker/actions/workflows/smokey.yml)
+    -   Russia (ru) is closed down
+-   [javascript API](#api) for easy integration in your library or project
 
-Command Line
-================================================================================
+# Command Line
 
 ## Install
 
@@ -49,6 +47,7 @@ Or call it directly using [npx](https://www.npmjs.com/package/npx):
     npx ikea-availability-checker --help
 
 ## Use
+
 ### Stores
 
     npx ikea-availability-checker stores at
@@ -70,7 +69,6 @@ Or call it directly using [npx](https://www.npmjs.com/package/npx):
     ├─────────────┼─────────┼────────┼────────────────┤
     │ at          │ Austria │ 388    │ Haid           │
     └─────────────┴─────────┴────────┴────────────────┘
-
 
 ### Stock
 
@@ -96,8 +94,6 @@ Or call it directly using [npx](https://www.npmjs.com/package/npx):
     │ 2022-09-11T13:03:37.274Z │ at          │ Austria │ 80213074 │ 085              │ Wien Vösendorf │    94 │ HIGH_IN_STOCK │
     └──────────────────────────┴─────────────┴─────────┴──────────┴──────────────────┴────────────────┴───────┴───────────────┘
 
-
-
 #### Product Stock Information for a specific store
 
 ##### with BU-Code (Store-Id)
@@ -110,13 +106,11 @@ Or call it directly using [npx](https://www.npmjs.com/package/npx):
     │ 2022-09-11T04:06:00.066Z │ at          │ Austria │ S69022537 │ 155              │ Klagenfurt │    23 │ HIGH_IN_STOCK │
     └──────────────────────────┴─────────────┴─────────┴───────────┴──────────────────┴────────────┴───────┴───────────────┘
 
-
 ##### Store-Name / Location / City-Name
 
 The "store" option also accepts strings that match on the location’s name:
 
     npx ikea-availability-checker stock --store=Berlin 40413131
-
 
 #### Multiple Stores and Product Ids
 
@@ -140,39 +134,33 @@ The list of bu-codes can also contain bu-codes from different countries.
     │ 2022-09-11T04:39:05.053Z │ de          │ Germany │ 40299687  │ 224              │ Sindelfingen   │    16 │ HIGH_IN_STOCK │
     └──────────────────────────┴─────────────┴─────────┴───────────┴──────────────────┴────────────────┴───────┴───────────────┘
 
-
-
-API 
-================================================================================
+# API
 
 The API interface which helps you include the check into your library is kind of new. If you have suggestions for improvements feel free to [open an issue](https://github.com/Ephigenia/ikea-availability-checker/issues).
 
 ```javascript
-const checker = require('ikea-availability-checker');
+const checker = require("ikea-availability-checker");
 
-(async function() {
-    const result = await checker.availability('394', '00501436');
-    console.log('RESULT', result);
+(async function () {
+    const result = await checker.availability("394", "00501436");
+    console.log("RESULT", result);
 })();
 ```
 
 Checkout more examples in the [examples](./examples) directory.
 
-Development
-================================================================================
+# Development
 
 ## Requirements
 
-- [nodejs](https://nodejs.org) for version info check [.nvmrc](./.nvmrc).
-*it is strongly recommended to use either nvm and the same node version or the docker container as a development environment*
-
+-   [nodejs](https://nodejs.org) for version info check [.nvmrc](./.nvmrc).
+    _it is strongly recommended to use either nvm and the same node version or the docker container as a development environment_
 
 ## Debug
 
 Node provides a simple way to debug all HTTP-related requests and responses using `NODE_DEBUG`:
 
     NODE_DEBUG=http npm run start
-
 
 ## Testing
 
@@ -204,35 +192,33 @@ Releases are automated and created by CI managed by [semantic-release](https://g
 
 ## Trouble Shooting
 
-- I want to deactivate colored output
+-   I want to deactivate colored output
     Colored output can be disabled by setting the `FORCE_COLOR=1` before running a command: `FORCE_COLOR=0 npx ikea-availability-checker stores de`
 
-
-Other Projects & Articles
-================================================================================
+# Other Projects & Articles
 
 ## Articles & Resources
 
-- npm package [ikea-stock-checker](https://www.npmjs.com/package/ikea-stock-checker)
-- [API of the Day: Checking IKEA Availability and Warehouse Locations](https://medium.com/@JoshuaAJung/api-of-the-day-ikea-availability-checks-8678794a9b52) by Joshua Jung
-- [IKEA Reddit](https://www.reddit.com/r/IKEA/)
-- [IKEA Mobile api description](https://del.dog/ikeamobileapi.md)
+-   npm package [ikea-stock-checker](https://www.npmjs.com/package/ikea-stock-checker)
+-   [API of the Day: Checking IKEA Availability and Warehouse Locations](https://medium.com/@JoshuaAJung/api-of-the-day-ikea-availability-checks-8678794a9b52) by Joshua Jung
+-   [IKEA Reddit](https://www.reddit.com/r/IKEA/)
+-   [IKEA Mobile api description](https://del.dog/ikeamobileapi.md)
 
 ## Packages
 
-- [vrslev/ikea-api-client](https://github.com/vrslev/ikea-api-client) alternate IKEA API Client
-- [ikea stock checker](https://github.com/lovegandhi/ikea-stock-checker)
-- [ikea stock finder](https://github.com/sasasoni/ikea_stock_finder) Japanese ruby
-- [ikea scraper](https://github.com/LordBonzi/ikea-scraper) python stock scraper
-- [ikea bot](https://github.com/xorik/ikea-bot) telegram notification bot
+-   [vrslev/ikea-api-client](https://github.com/vrslev/ikea-api-client) alternate IKEA API Client
+-   [ikea stock checker](https://github.com/lovegandhi/ikea-stock-checker)
+-   [ikea stock finder](https://github.com/sasasoni/ikea_stock_finder) Japanese ruby
+-   [ikea scraper](https://github.com/LordBonzi/ikea-scraper) python stock scraper
+-   [ikea bot](https://github.com/xorik/ikea-bot) telegram notification bot
 
 ## Services
 
-- [Stock Hound](https://github.com/spgill/stock-hound) [website](http://stockhound.spgill.me/)
-- [IKEA Click & Collect Availability](https://ikea-status.dong.st/) website for us-stores
-- [ikea-availability-web](https://github.com/anditosl/ikea-availability-web)
+-   [Stock Hound](https://github.com/spgill/stock-hound) [website](http://stockhound.spgill.me/)
+-   [IKEA Click & Collect Availability](https://ikea-status.dong.st/) website for us-stores
+-   [ikea-availability-web](https://github.com/anditosl/ikea-availability-web)
 
-- [ikeaprices](https://github.com/mnazarov/ikeaprices) browser snippet for comparing prices in different countries
+-   [ikeaprices](https://github.com/mnazarov/ikeaprices) browser snippet for comparing prices in different countries
 
 <hr>
 <small>

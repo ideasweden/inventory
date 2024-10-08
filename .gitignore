@@ -11,3 +11,5 @@ coverage
 dist
 
 *.tmp*
+#virual env for python dependencies
+.venv
