@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "@colors/colors": "1.6.0",
-    "axios": "1.13.3",
+    "axios": "1.13.4",
     "cli-table3": "0.6.5",
     "commander": "14.0.3",
     "i18n-iso-countries": "7.14.0",
