@@ -74,9 +74,9 @@
     "ikea-availability-checker": "2.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.2.3",
-    "@commitlint/config-angular": "21.2.3",
-    "@commitlint/config-conventional": "21.2.3",
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-angular": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
     "@types/jest": "30.0.0",
     "@types/node": "26.6.5",
     "@typescript-eslint/eslint-plugin": "8.71.2",
